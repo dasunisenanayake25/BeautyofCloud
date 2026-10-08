@@ -1,0 +1,14 @@
+{
+  "SamplingRule": {
+    "RuleName": "DEWSCriticalPathRule",
+    "Priority": 10,
+    "FixedRate": 1.0,
+    "ReservoirSize": 50,
+    "ServiceName": "dews-agency-dashboard",
+    "ServiceType": "*",
+    "Host": "*",
+    "HTTPMethod": "*",
+    "URLPath": "/api/v1/alerts/*",
+    "Version": 1
+  }
+}

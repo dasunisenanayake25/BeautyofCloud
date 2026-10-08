@@ -1,0 +1,36 @@
+{
+  "UserPoolName": "neural-ninja-dews-user-pool",
+  "Policies": {
+    "PasswordPolicy": {
+      "MinimumLength": 12,
+      "RequireUppercase": true,
+      "RequireLowercase": true,
+      "RequireNumbers": true,
+      "RequireSymbols": true
+    }
+  },
+  "MfaConfiguration": "ON",
+  "AdminCreateUserConfig": {
+    "AllowAdminCreateUserOnly": true
+  },
+  "Schema": [
+    {
+      "Name": "agency_id",
+      "AttributeDataType": "String",
+      "Mutable": true,
+      "Required": false
+    },
+    {
+      "Name": "clearance_level",
+      "AttributeDataType": "Number",
+      "Mutable": true,
+      "Required": false
+    },
+    {
+      "Name": "assigned_jurisdiction",
+      "AttributeDataType": "String",
+      "Mutable": true,
+      "Required": false
+    }
+  ]
+}

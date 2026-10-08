@@ -1,0 +1,34 @@
+{
+  "Description": "RBAC Roles for Neural Ninja AWS DEWS Situation Room",
+  "Roles": [
+    {
+      "GroupName": "NationalIncidentCommander",
+      "ClearanceLevel": 4,
+      "Description": "Unrestricted nationwide multi-basin visibility, authority to trigger Level 4 Cell Broadcast and SNS Fan-Out",
+      "Permissions": [
+        "dews:ViewAllBasins",
+        "dews:TriggerCellBroadcast",
+        "dews:OverrideCorroboration",
+        "dews:ManageAgencyUsers"
+      ]
+    },
+    {
+      "GroupName": "DistrictReliefCoordinator",
+      "ClearanceLevel": 2,
+      "Description": "Scoped to assigned district/basin (e.g. Matara / Nilwala basin), alert staging and citizen response verification",
+      "Permissions": [
+        "dews:ViewAssignedBasin",
+        "dews:StageAlertDraft",
+        "dews:LogCitizenReports"
+      ]
+    },
+    {
+      "GroupName": "ReadOnlyObserver",
+      "ClearanceLevel": 1,
+      "Description": "Non-governmental organizations (Red Cross, Meteorological observers) with read-only access",
+      "Permissions": [
+        "dews:ViewAggregatedRiskMap"
+      ]
+    }
+  ]
+}

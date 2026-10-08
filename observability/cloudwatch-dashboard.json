@@ -1,0 +1,70 @@
+{
+  "widgets": [
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 0,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "AWS/Kinesis", "GetRecords.IteratorAgeMilliseconds", "StreamName", "dews-sensor-stream-prod" ]
+        ],
+        "period": 60,
+        "stat": "Maximum",
+        "region": "ap-southeast-1",
+        "title": "Kinesis Ingestion Stream Lag (IteratorAge)"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 12,
+      "y": 0,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "AWS/SNS", "NumberOfNotificationsFailed", "TopicName", "dews-geohash-alerts" ],
+          [ ".", "NumberOfNotificationsDelivered", ".", "." ]
+        ],
+        "period": 60,
+        "stat": "Sum",
+        "region": "ap-southeast-1",
+        "title": "SNS Fan-Out Delivery & Failure Rates"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 0,
+      "y": 6,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "AWS/DynamoDB", "ReplicationLatency", "TableName", "dews-risk-state-global", "ReceivingRegion", "ap-south-1" ]
+        ],
+        "period": 60,
+        "stat": "Average",
+        "region": "ap-southeast-1",
+        "title": "DynamoDB Global Table Cross-Region Replication Latency"
+      }
+    },
+    {
+      "type": "metric",
+      "x": 12,
+      "y": 6,
+      "width": 12,
+      "height": 6,
+      "properties": {
+        "metrics": [
+          [ "AWS/States", "ExecutionsSucceeded", "StateMachineArn", "arn:aws:states:ap-southeast-1:risk-decision" ],
+          [ ".", "ExecutionsFailed", ".", "." ]
+        ],
+        "period": 60,
+        "stat": "Sum",
+        "region": "ap-southeast-1",
+        "title": "Step Functions Corroboration State Machine Executions"
+      }
+    }
+  ]
+}
